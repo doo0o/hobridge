@@ -1,0 +1,27 @@
+.wrap{
+    padding: 20px 40px;
+}
+
+.header{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    &.active{
+        border-bottom: 1px solid var(--identity-color02);
+    }
+}
+.logo{
+    width: 180px;
+    height: 52px;
+    background: {
+        image: url('../images/logo.png');
+        size : 100%;
+        position: center;
+        repeat : no-repeat;
+    };
+    &.type-hz{
+        background-image: url('../images/logo-hz.png');
+    }
+}
+
