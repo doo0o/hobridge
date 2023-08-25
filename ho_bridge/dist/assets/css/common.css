@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body {
-	width: 1920px;
 	position: relative;
 	font-family: "Nanum Gothic", sans-serif;
 	font-size: 12px;
@@ -417,6 +416,10 @@ table {
 }
 .header.active {
 	border-bottom: 1px solid var(--identity-color02);
+}
+.header.intro .logo {
+	width: 100vw;
+	height: 100vh;
 }
 
 .logo {

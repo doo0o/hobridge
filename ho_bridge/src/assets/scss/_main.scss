@@ -10,6 +10,12 @@
     &.active{
         border-bottom: 1px solid var(--identity-color02);
     }
+    &.intro{
+        .logo{
+            width: 100vw;
+            height: 100vh;
+        }
+    }
 }
 .logo{
     width: 180px;
