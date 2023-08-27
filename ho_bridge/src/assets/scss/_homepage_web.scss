@@ -1,6 +1,8 @@
 // ! important style
 .hidden{display: none !important;}
 .point_red{color: var(--red) !important;}
+.color-blue{color: #6363ea;}
+.color-red{color:#ff6464}
 .logo{
     width: 120px;
     height: 30px;
@@ -11,6 +13,36 @@
     }
     img{
         width: 100%;
+    }
+}
+.box_item{
+    position: relative;
+}
+.design-text{
+    display: inline-block;
+    margin-left: 4px;
+}
+.arrow{
+    &::after{
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 12px;
+        height: 24px;
+        -webkit-animation: mouse-wheel 1s linear infinite;
+        animation: mouse-wheel 1s linear infinite;
+    }
+    &.up{
+        &::after{
+            background: url(svgArrow(12,24,5,$c:6363ea)) no-repeat center / 100%;
+            transform: translateY(10px) rotate(-90deg);
+        }
+    }
+    &.down{
+        &::after{
+            background: url(svgArrow(12,24,5,$c:ff6464)) no-repeat center / 100%;
+            transform: translateY(10px) rotate(90deg);
+        }
     }
 }
 
@@ -318,11 +350,6 @@ $--item_06 : (
     position: relative;
     overflow: hidden;
     height: calc(100vh);
-    background: {
-        image : url(../images/homepage/bg_visual.svg);
-        position : center -580px;
-        repeat : no-repeat;
-    };
     &::after{
         content: "";
         @include pos(absolute, $b:0,$l:50%);
@@ -480,12 +507,23 @@ $--item_06 : (
         }
     }
 
-
+    &__company{
+        .section__title{
+            color: var(--white);
+        }
+        background: url(../images/homepage/company.png) no-repeat center / 100%;
+    }
     &__01{
         background-color: var(--section_bg_01);
     }
     &__02{
         background-color: var(--white);
+    }
+    &__03{
+        .section__title{
+            color: #fff;
+        }
+        background-color: #015ca9;
     }
     &__04{
         background-color: rgba(255, 255, 255, 0.5);

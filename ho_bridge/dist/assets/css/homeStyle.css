@@ -2,7 +2,7 @@
 :root {
 	/* color */
 	/* primary */
-	--color-primary: #57CD78;
+	--color-primary: #65b32e;
 	/* swiper item theme color */
 	--item-theme_orange_01: #FF6725;
 	--item-theme_yellow_01: #ECB54A;
@@ -354,6 +354,14 @@ pre {
 	color: var(--red) !important;
 }
 
+.color-blue {
+	color: #6363ea;
+}
+
+.color-red {
+	color: #ff6464;
+}
+
 .logo {
 	width: 120px;
 	height: 30px;
@@ -365,6 +373,33 @@ pre {
 }
 .logo img {
 	width: 100%;
+}
+
+.box_item {
+	position: relative;
+}
+
+.design-text {
+	display: inline-block;
+	margin-left: 4px;
+}
+
+.arrow::after {
+	content: "";
+	position: relative;
+	display: inline-block;
+	width: 12px;
+	height: 24px;
+	-webkit-animation: mouse-wheel 1s linear infinite;
+	animation: mouse-wheel 1s linear infinite;
+}
+.arrow.up::after {
+	background: url("data:image/svg+xml,%3Csvg width='22' height='34' viewBox='0 0 22 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L17 17L5 29' stroke='%236363ea' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center/100%;
+	transform: translateY(10px) rotate(-90deg);
+}
+.arrow.down::after {
+	background: url("data:image/svg+xml,%3Csvg width='22' height='34' viewBox='0 0 22 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L17 17L5 29' stroke='%23ff6464' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center/100%;
+	transform: translateY(10px) rotate(90deg);
 }
 
 input[type=checkbox], input[type=radio] {
@@ -632,9 +667,6 @@ input::-webkit-inner-spin-button {
 	position: relative;
 	overflow: hidden;
 	height: 100vh;
-	background-image: url(../images/homepage/bg_visual.svg);
-	background-position: center -580px;
-	background-repeat: no-repeat;
 }
 .visual::after {
 	content: "";
@@ -799,11 +831,23 @@ input::-webkit-inner-spin-button {
 .section__swiper01 .swiper-slide {
 	width: 360px;
 }
+.section__company {
+	background: url(../images/homepage/company.png) no-repeat center/100%;
+}
+.section__company .section__title {
+	color: var(--white);
+}
 .section__01 {
 	background-color: var(--section_bg_01);
 }
 .section__02 {
 	background-color: var(--white);
+}
+.section__03 {
+	background-color: #015ca9;
+}
+.section__03 .section__title {
+	color: #fff;
 }
 .section__04 {
 	background-color: rgba(255, 255, 255, 0.5);
