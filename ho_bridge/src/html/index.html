@@ -1,8 +1,176 @@
-@@include('./head.html')
-    <body>
-        @@include('./header.html')
-        <div class="container">
+@@include('./home_head.html')
+<body>
+    <div class="container">
+        @@include('./home_header.html')
 
+        <div class="visual" id="visual">
+            <div class="visual--contents">
+                <div class="visual--wrap">
+                    <p class="visual--text bottom-to-top">의료기기 전문 기업</p>
+                    <p class="visual--title bottom-to-top">호브릿지</p>
+                    <p class="visual--sub bottom-to-top">편리함은 올리고 감염율을 낮춘 NT-WAY</p>
+                </div>
+            </div>
         </div>
-    </body>
+        <section class="section section__company">
+            <div class="section__inner">
+                <div class="section__head">
+                    <h2 class="section__title" data-io="true">회사소개</h2>
+                </div>
+                <div class="form style_box01 bottom-to-top" data-io="true">
+                    호브릿지는 이런 회사입니다.
+                    소갯말이 들어갈 영역
+
+                    <div class="caution--text">
+                        
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <section class="section section__01">
+            <div class="section__inner">
+                <div class="section__head">
+                    <h2 class="section__title" data-io="true">NT-WAY I.V line set</h2>
+                </div>
+                <div class="box_item">
+                    최소한의 터치로 <span class="design-text color-blue">편리함</span> <span class="arrow up"></span> <span class="design-text color-red">감염율</span> <span class="arrow down"></span>
+                </div>
+
+                <div class="form style_box01 bottom-to-top" style="text-align: center;">
+                    <img src="../assets/images/homepage/prod_line.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section section__02">
+            <div class="section__inner">
+                <div class="section__head">
+                    <h2 class="section__title" data-io="true">NT-WAY EX line set</h2>
+                </div>
+            </div>
+        </section>
+        <section class="section section__03">
+            <div class="section__inner">
+                <div class="section__head">
+                    <h2 class="section__title" data-io="true">NT-WAY 특징</h2>
+                </div>
+                <div class="form style_box01" data-io="true">
+                    NT-WAY는 약물 주입 시 별도의 조작 없이 약물의 흐름을 제어한다.
+                    최소한의 터치로 박테리아 군집을 최소하하며, 간호 업무의 효율을 높일 수 있다.
+
+                    <div class="caution--text">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    @@include('./home_footer.html')
+</body>
+
+<script type="text/javascript" src="../assets/js/homepage.js"></script>
+<script>
+    // 버튼 비활성화 시 사용함수
+    function btn_disable(){
+        event.target.setAttribute('disabled','');
+    }
+
+    // swiper
+    // let section_swiper_option = {
+    //     slidesPerView : 'auto',
+    //     spaceBetween : 20,
+    //     pagination : {
+    //         el : '.swiper-pagination',
+    //     },
+    //     breakpoints: {
+    //         1024 : {
+    //             pagination: false,
+    //             navigation : {
+    //                 nextEl : '.swiper-button-next.sw-btn01',
+    //                 prevEl : '.swiper-button-prev.sw-btn01'
+    //             },
+    //         }
+    //     },
+    // }
+    // let section_swiper = slider({
+    //     target: 'sectionSlider01',
+    //     option: {
+    //         slidesPerView : 'auto',
+    //         spaceBetween : 20,
+    //         pagination : {
+    //             el : '.swiper-pagination',
+    //         },
+    //         breakpoints: {
+    //             1024 : {
+    //                 pagination: false,
+    //                 navigation : {
+    //                     nextEl : '.swiper-button-next.sw-btn01',
+    //                     prevEl : '.swiper-button-prev.sw-btn01'
+    //                 },
+    //             }
+    //         },
+    //     }
+    // })
+    // let section_swiper02 = slider({
+    //     target: 'sectionSlider02',
+    //     option: {
+    //         slidesPerView : 'auto',
+    //         spaceBetween : 20,
+    //         pagination : {
+    //             el : '.swiper-pagination',
+    //         },
+    //         breakpoints: {
+    //             1024 : {
+    //                 pagination: false,
+    //                 navigation : {
+    //                     nextEl : '.swiper-button-next.sw-btn02',
+    //                     prevEl : '.swiper-button-prev.sw-btn02'
+    //                 },
+    //             }
+    //         },
+    //     }
+    // })
+
+    // let pass_leng = document.querySelectorAll('.pass__list .swiper-slide').length;
+    // let pass_swiper = slider({
+    //     target: 'passSwiper',
+    //     option: {
+    //         slidesPerView: 1,
+    //         pagination : {
+    //             el : '.swiper-pagination'
+    //         },
+    //         spaceBetween : 20,
+    //         breakpoints:{
+    //             1024 : {
+    //                 slidesPerView: pass_leng,
+    //                 spaceBetween : 23,
+    //                 grabCursor: false,
+    //                 updateOnWindowResize: true,
+    //                 pagination: false,
+    //             }
+    //         },
+    //     }
+    // })
+
+    window.addEventListener('scroll',scrollSensor);
+
+    function scrollSensor(e){
+        let ww = window.innerWidth;
+        if(ww > 1024){
+            let btnArr = document.querySelectorAll('.scroll-nav__list .type--btn > button');
+            if(btnArr){
+                btnArr.forEach((el,index) => {
+                    let getData = el.dataset.targetClass;
+                    let dataEl = document.querySelector(`.${getData}`);
+                    let targetY = window.scrollY + dataEl.getBoundingClientRect().top;
+                    
+                    if(parseInt(window.scrollY) >= parseInt(targetY - header_h)){
+                        activeOn(el);
+                    }else if(window.scrollY == 0){
+                        el.closest('li').classList.remove('on');
+                    }
+                });
+            }
+        }
+    }
+</script>
 </html>
