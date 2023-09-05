@@ -362,6 +362,10 @@ pre {
 	color: #ff6464;
 }
 
+.point-text {
+	color: var(--color-primary);
+}
+
 .logo {
 	width: 120px;
 	height: 30px;
@@ -608,6 +612,7 @@ input::-webkit-inner-spin-button {
 }
 
 .header {
+	color: var(--white);
 	display: flex;
 	position: fixed;
 	z-index: 999;
@@ -626,6 +631,7 @@ input::-webkit-inner-spin-button {
 .header.active {
 	background-color: var(--white);
 	border-bottom: 1px solid var(--header_line);
+	color: var(--black);
 }
 
 .scroll-nav {
@@ -667,6 +673,13 @@ input::-webkit-inner-spin-button {
 	position: relative;
 	overflow: hidden;
 	height: 100vh;
+	background-color: #001120;
+	background-image: url(../images/homepage/visual_bg_vector.png);
+	background-position: right 70px bottom 100px;
+	background-size: 630px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	text-align: center;
 }
 .visual::after {
 	content: "";
@@ -677,7 +690,7 @@ input::-webkit-inner-spin-button {
 	width: 22px;
 	height: 41px;
 	transform: translateX(-50%) rotate(90deg);
-	background: url("data:image/svg+xml,%3Csvg width='29' height='48' viewBox='0 0 29 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L24 24L5 43' stroke='%23000000' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center/100%;
+	background: url("data:image/svg+xml,%3Csvg width='29' height='48' viewBox='0 0 29 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L24 24L5 43' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center/100%;
 	-webkit-animation: mouse-wheel 1s linear infinite;
 	animation: mouse-wheel 1s linear infinite;
 }
@@ -699,6 +712,7 @@ input::-webkit-inner-spin-button {
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 66px;
+	color: var(--white);
 }
 .visual--title {
 	margin-top: 6px;
@@ -712,6 +726,7 @@ input::-webkit-inner-spin-button {
 	font-size: 24px;
 	font-weight: 500;
 	line-height: 30px;
+	color: var(--white);
 }
 .visual--img {
 	position: absolute;
@@ -833,6 +848,7 @@ input::-webkit-inner-spin-button {
 }
 .section__company {
 	background: url(../images/homepage/company.png) no-repeat center/100%;
+	background-attachment: fixed;
 }
 .section__company .section__title {
 	color: var(--white);

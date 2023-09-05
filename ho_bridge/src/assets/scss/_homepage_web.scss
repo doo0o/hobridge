@@ -3,6 +3,7 @@
 .point_red{color: var(--red) !important;}
 .color-blue{color: #6363ea;}
 .color-red{color:#ff6464}
+.point-text{color: var(--color-primary);}
 .logo{
     width: 120px;
     height: 30px;
@@ -292,6 +293,7 @@ $--item_06 : (
 }
 // header nav
 .header{
+    color: var(--white);
     display: flex;
     @include pos(fixed,$t:0,$l:0,$z: 999);
     width: 100%;
@@ -306,6 +308,7 @@ $--item_06 : (
     &.active{
         background-color: var(--white);
         border-bottom: 1px solid var(--header_line);
+        color: var(--black);
     }
 }
 .scroll{
@@ -350,6 +353,16 @@ $--item_06 : (
     position: relative;
     overflow: hidden;
     height: calc(100vh);
+    background: {
+        color: #001120;
+        image: url(../images/homepage/visual_bg_vector.png);
+        position: right 70px bottom 100px;
+        size: 630px;
+        repeat: no-repeat;
+        
+    };
+    background-attachment: fixed;
+    text-align: center;
     &::after{
         content: "";
         @include pos(absolute, $b:0,$l:50%);
@@ -357,7 +370,7 @@ $--item_06 : (
         width: 22px;
         height: 41px;
         transform: translateX(-50%) rotate(90deg);
-        background: url(svgArrow(19,38,5)) no-repeat center / 100%;
+        background: url(svgArrow(19,38,5,$c:fff)) no-repeat center / 100%;
         -webkit-animation: mouse-wheel 1s linear infinite;
         animation: mouse-wheel 1s linear infinite;
     }
@@ -375,6 +388,7 @@ $--item_06 : (
     }
     &--text{
         @include font(60px,700);
+        color: var(--white);
     }
     &--title{
         margin-top: 6px;
@@ -384,6 +398,7 @@ $--item_06 : (
     &--sub{
         margin-top: 20px;
         @include font(24px, 500);
+        color: var(--white);
     }
     &--img{
         @include pos(absolute, $b: 30px, $r: 0);
@@ -512,6 +527,7 @@ $--item_06 : (
             color: var(--white);
         }
         background: url(../images/homepage/company.png) no-repeat center / 100%;
+        background-attachment: fixed;
     }
     &__01{
         background-color: var(--section_bg_01);
