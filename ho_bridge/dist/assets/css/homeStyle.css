@@ -1574,10 +1574,6 @@ input::-webkit-inner-spin-button {
 	.container {
 		min-width: var(--Tablet-container);
 	}
-	.visual {
-		background-size: 2170px;
-		background-position: center -270px;
-	}
 	.visual--contents {
 		width: var(--Tablet-contents);
 	}
@@ -1855,10 +1851,7 @@ input::-webkit-inner-spin-button {
 		display: none;
 	}
 	.visual {
-		background-image: url(../images/homepage/bg_visual_mo.svg);
 		padding-top: 80px;
-		background-size: 1024px;
-		background-position: center -190px;
 	}
 	.visual::after {
 		display: none;

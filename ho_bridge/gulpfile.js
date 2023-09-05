@@ -4,6 +4,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const fileinclude = require('gulp-file-include');
 const browserSync = require('browser-sync').create();
+const open = require('gulp-open');
+
 const path = {
 	dist: './dist/',
 	src: './src/',
@@ -72,11 +74,21 @@ gulp.task('browserSync', () => {
     }
   })
 });
+
+gulp.task('open', function() {
+  const options = {
+      url: './index.html', // 열고자 하는 파일 경로
+      app: 'chrome' // 원하는 브라우저 (예: 'chrome', 'firefox')
+  };
+  return gulp.src(__filename)
+      .pipe(open(options));
+});
 gulp.task('watch', () => {
   gulp.watch(path.src + '**/*.html', gulp.series('html'));
   gulp.watch(path.src + 'assets/**/*.scss', gulp.series('scss'));
   gulp.watch(path.src + 'assets/**/*.js', gulp.series('js'));
   gulp.watch(path.src + 'assets/images/', gulp.series('images'));
 });
-gulp.task('default', gulp.parallel('html','scss','js','images','fonts','watch','browserSync'));
+gulp.task('default', gulp.parallel('html','scss','js','images','fonts','watch','browserSync', 'open'));
 gulp.task('build', gulp.parallel('html','scss:prod','js','images','fonts'));
+

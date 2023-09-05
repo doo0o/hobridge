@@ -131,10 +131,7 @@
        }
    }
    .visual{
-       background-image: url(../images/homepage/bg_visual_mo.svg);
        padding-top: 80px;
-       background-size: 1024px;
-       background-position: center -190px;
        &::after{
            display: none;
        }
