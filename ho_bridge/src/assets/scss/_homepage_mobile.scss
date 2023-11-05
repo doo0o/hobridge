@@ -1,110 +1,14 @@
 
 //  mobile
 @media (max-width: 1024px) {
-    /* z각 item x,y 값 (x : right, y : top, width & height) */
-    $--item_01 : (
-       x : 100px,
-       y : 0,
-       width : 41px,
-       height : 56px
-   );
-   $--item_02 : (
-       x : 80px,
-       y : -50px,
-       width : 47px,
-       height : 44px
-   );
-   $--item_03 : (
-       x : 120px,
-       y : -70px,
-       width : 61px,
-       height : 61px
-   );
-   $--item_04 : (
-       x : 50px,
-       y : -110px,
-       width : 63px,
-       height : 44px
-   );
-   $--item_05 : (
-       x : 135px,
-       y : -140px,
-       width : 52px,
-       height : 52px
-   );
-   $--item_06 : (
-       x : 128px,
-       y : -220px,
-       width : 78px,
-       height : 84px
-   );
-   @keyframes move01{
-       0% {
-           top : map-get($--item_01, y) - 80px;
-           right: map-get($--item_01, x) - 100px;
-           transform: scale(1.4);
-       }
-       100%{
-           top : map-get($--item_01, y);
-           right: map-get($--item_01, x);
-           transform: scale(1);
-       }
-   }
-   @keyframes move02{
-       0% {
-           top : map-get($--item_02, y) - 80px;
-           right: map-get($--item_02, x) - 100px;
-           transform: scale(1.4);
-       }
-       100%{
-           top : map-get($--item_02, y);
-           right: map-get($--item_02, x);
-           transform: scale(1);
-       }
-   }
-   @keyframes move03{
-       0% {
-           top : map-get($--item_03, y) - 80px;
-           right: map-get($--item_03, x) + 60px;
-           transform: scale(1.4);
-       }
-       100%{
-           top : map-get($--item_03, y);
-           right: map-get($--item_03, x);
-           transform: scale(1);
-       }
-   }
-   @keyframes move04{
-       0% {
-           top : map-get($--item_04, y) - 80px;
-           transform: scale(1.4);
-       }
-       100%{
-           top : map-get($--item_04, y);
-           transform: scale(1);
-       }
-   }
-   @keyframes move05{
-       0% {
-           top : map-get($--item_05, y) - 80px;
-           transform: scale(1.4)
-       }
-       100%{
-           top : map-get($--item_05, y);
-           transform: scale(1)
-       }
-   }
-   @keyframes move06{
-       0% {
-           top : map-get($--item_06, y) - 80px;
-           transform: scale(1.4)
-       }
-       100%{
-           top : map-get($--item_06, y);
-           transform: scale(1)
-       }
-   }
-   
+    .bg-01{
+        background-size: cover;
+        &::before{
+            rotate: initial;
+            top: 0;
+            left: 0;
+        }
+    }
 
    .btn-menu {
        display: block;
@@ -125,7 +29,7 @@
 
    .header{
        padding: 0 10px;
-       height: 48px;
+       height: var(--header);
        .scroll-nav{
            display: none;
        }
@@ -136,12 +40,7 @@
            display: none;
        }
        &--wrap{
-           position: relative;
-           top: auto;
-           left: auto;
-           transform: initial;
-           padding: 0;
-           z-index: 3;
+            margin-top: var(--);
        }
        &--img{
            bottom: 10%;
@@ -219,7 +118,7 @@
        }
    }
    .section{
-       padding: 98px 0;
+       padding: 50px 0;
        &__head{
         & ~ *{
             margin-top: 36px;
@@ -421,8 +320,28 @@
    }
 
    .style_box02{
-       width: 300px;
+       width: 100%;
    }
+   .prod__name{
+    text-align: center;
+   }
+   .reference_img{
+    width: 100%;
+   }
+   .list__dep{
+       &.type__00{
+           display: block;
+            & > li{
+                width: 100%;
+            }
+            .ballon{
+                display: block;
+                &::after{
+                    bottom: -9px;
+                }
+            }
+        }
+    }
    .footer{
        padding: 32px 0 ;
        @include font(12px, 400);
@@ -565,10 +484,4 @@
       }
     }
   }
-}
-
-@media (max-width: 360px) {
-   .visual{
-       padding: 80px 10px 0;
-   }
 }
